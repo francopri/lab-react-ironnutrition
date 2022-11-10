@@ -3,11 +3,14 @@ import foodsData from './foods.json';
 import FoodBox from './components/FoodBox';
 import AddFoodForm from './components/AddFoodForm';
 import { useState } from 'react';
+import { Row, Divider, Button } from 'antd';
+import SearchBar from 'antd/lib/transfer/search';
 
 
 function App() {
 
   const [foods, setFoods] = useState(foodsData);
+  const [search, setSearch] = useState('');
 
   function addNewFood(newFood) {
 
@@ -22,27 +25,35 @@ function App() {
     const filteredFoods = foods.filter(food => {
       return food.name !== name;
     });
- 
     setFoods(filteredFoods);
 
   };
 
+ 
   return (
     <div className="App">
 
-      <AddFoodForm addFood={addNewFood} />
+      {/* <Button> Hide Form / Add New Food </Button> */}
+      
+      {/* o primeiro search é o nome da props e o segundo search é o valor da props */}
 
-      <h1>Food List</h1>
-      <hr />
+      <SearchBar search={search} setSearch={setSearch} />
 
-      <div className='food-list'>
+      <Divider>Food List</Divider>
+
+      <Row style={{ width: '100%', justifyContent: 'center' }}>
         {
-          foods.map((currentFood) => {
-
-            return (<FoodBox food={currentFood} deleteFood={deleteFood} />);
-          })
+          foods
+            .filter((currentFood) => {
+              return currentFood.name.toLowerCase().includes(search.toLowerCase());
+            })
+            .map((currentFood) => {
+              return (<FoodBox food={currentFood} deleteFood={deleteFood} key={currentFood.name} />);
+            })
         }
-      </div>
+      </Row>
+
+      <AddFoodForm addFood={addNewFood} />
 
     </div>
   );

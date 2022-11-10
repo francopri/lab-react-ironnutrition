@@ -18,12 +18,5 @@ code {
   padding: 20px;
 }
 
-.App h1 {
-  text-align: center;
-}
 
-.food-list{
-  display: flex;
-  flex-wrap: wrap;
-  
-}
+
