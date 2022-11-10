@@ -37,7 +37,7 @@ function App() {
       
       {/* o primeiro search é o nome da props e o segundo search é o valor da props */}
 
-      <SearchBar search={search} setSearch={setSearch} />
+      <SearchBar search={search} setSearch={setSearch}/>
 
       <Divider>Food List</Divider>
 

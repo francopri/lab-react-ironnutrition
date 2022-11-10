@@ -1,4 +1,4 @@
-import { Card, Row, Col, Divider, Input, Button } from 'antd';
+import { Divider, Input } from 'antd';
 import { useState } from 'react';
 
 
@@ -8,7 +8,6 @@ function AddFoodForm({ addFood }) {
     const [image, setImage] = useState('');
     const [calories, setCalories] = useState('');
     const [servings, setServings] = useState('');
-
 
     function handleSubmit(e) {
 

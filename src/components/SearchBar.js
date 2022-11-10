@@ -7,6 +7,7 @@ function SearchBar({ search, setSearch }) {
 
     function handleChange(e) {
         //verifica/seta qual foi a tecla pressionada
+        
         setSearch(e.target.value);
         
         // console.log(e.target.value);
@@ -15,7 +16,9 @@ function SearchBar({ search, setSearch }) {
 
     return (
         <div>
+
             <Divider>Search bar</Divider>
+
             <label>Search</label>
             <Input type="text" value={search} onChange={handleChange}/>
         </div>
