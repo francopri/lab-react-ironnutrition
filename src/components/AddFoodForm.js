@@ -42,7 +42,7 @@ function AddFoodForm({ addFood }) {
             <Input value={image} type="text" onChange={(e) => { setImage(e.target.value) }} />
 
             <label>Calories</label>
-            <Input value={calories} type="text" onChange={(e) => { setCalories(e.target.value) }} />
+            <Input value={calories} type="number" onChange={(e) => { setCalories(e.target.value) }} />
 
             <label>Servings</label>
             <Input value={servings} type="text" onChange={(e) => { setServings(e.target.value) }} />

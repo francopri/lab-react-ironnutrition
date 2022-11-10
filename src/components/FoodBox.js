@@ -1,4 +1,4 @@
-import { Card, Row, Col, Divider, Input, Button } from 'antd';
+import { Card, Col, Button } from 'antd';
 
 
 function FoodBox({food, deleteFood}) {
@@ -15,6 +15,7 @@ function FoodBox({food, deleteFood}) {
                 <p>
                     <b>Total Calories: {food.calories * food.servings} </b> kcal
                 </p>
+
                 <Button type="primary" onClick={() => {
                     deleteFood(food.name);
                 }}> Delete </Button>

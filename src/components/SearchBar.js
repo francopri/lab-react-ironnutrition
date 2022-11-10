@@ -1,4 +1,4 @@
-import { Divider, Input } from 'antd';
+import { Input, Divider } from 'antd';
 
 function SearchBar({ search, setSearch }) {
 
@@ -6,21 +6,20 @@ function SearchBar({ search, setSearch }) {
     // e >> é o evento
 
     function handleChange(e) {
+        
         //verifica/seta qual foi a tecla pressionada
-        
-        setSearch(e.target.value);
-        
-        // console.log(e.target.value);
-    }
+        console.log(e.target.value);
 
+        setSearch(e.target.value);
+
+    }
 
     return (
         <div>
-
             <Divider>Search bar</Divider>
 
             <label>Search</label>
-            <Input type="text" value={search} onChange={handleChange}/>
+            <Input type="text" value={search} onChange={handleChange} />
         </div>
     );
 }
