@@ -17,6 +17,16 @@ function App() {
 
   }
 
+  function deleteFood(name) {
+
+    const filteredFoods = foods.filter(food => {
+      return food.name !== name;
+    });
+ 
+    setFoods(filteredFoods);
+
+  };
+
   return (
     <div className="App">
 
@@ -29,7 +39,7 @@ function App() {
         {
           foods.map((currentFood) => {
 
-            return (<FoodBox food={currentFood} />);
+            return (<FoodBox food={currentFood} deleteFood={deleteFood} />);
           })
         }
       </div>
